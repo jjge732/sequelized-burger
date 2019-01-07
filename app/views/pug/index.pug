@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Survey
+        //- https://github.com/pugjs/pug/issues/1626
+        style
+            include ../stylesheets/reset.css
+            include ../stylesheets/materialize.min.css
+            include ../stylesheets/index.css
+        script
+            include ../javascript/jQuery.js
+    body.blue-grey.darken-2
+        .container.deep-orange-text.text-lighten-1.grey.lighten-3.z-depth-3
+            h1 Have a Burger!
+            .row
+                #left.col.s6
+                    if uneaten !=null
+                        ul
+                            each burger in uneaten
+                                li.devour(id= burger.id)= burger.name
+
+                #right.col.s6
+                    if eaten != null
+                        ul
+                            each burger in eaten
+                                li.devour(id= burger.id)= burger.name
+                #burgerEntry.col.s12
+                    form
+                        input#newBurger
+                        button.waves-effect.waves-light.btn#add Add Burger
+    script
+        include ../javascript/index.js
