@@ -34,10 +34,10 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+// db.customer = require('./customer.js')(sequelize, Sequelize);
 db.burger = require('./burger.js')(sequelize, Sequelize);
 
-// // user to cart:
-// db.user.hasMany(db.cart);
-// db.cart.belongsTo(db.user, {as: 'username'});
+// db.customer.hasMany(db.burger);
+// db.burger.belongsTo(db.customer, {foreignKey: 'eater'});
 
 module.exports = db;

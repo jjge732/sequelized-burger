@@ -16,7 +16,7 @@ app.set('view engine', 'pug');
 require('./app/controller/routes/api-routes.js')(app, db);
 require('./app/controller/routes/html-routes.js')(app, db);
 
-db.sequelize.sync({}).then(() => {
+db.sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => {
         console.log('App listening on PORT ' + PORT);
     });

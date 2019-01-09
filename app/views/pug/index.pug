@@ -4,7 +4,7 @@ html(lang="en")
         meta(charset='UTF-8')
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible" content="ie=edge")
-        title Survey
+        title Burger
         //- https://github.com/pugjs/pug/issues/1626
         style
             include ../stylesheets/reset.css
@@ -14,17 +14,19 @@ html(lang="en")
             include ../javascript/jQuery.js
     body.blue-grey.darken-2
         .container.deep-orange-text.text-lighten-1.grey.lighten-3.z-depth-3
+            //- h2 Put your name here!
+            //- form
+            //-     input#name-input
             h1 Have a Burger!
             .row
                 #left.col.s6
                     if uneaten !=null
-                        h2 Uneaten Burgers
+                        h2#uneaten Uneaten Burgers
                             ul
                                 each burger in uneaten
                                     li.teal-text
                                         div(id= 'burger' + burger.id)= burger.name
                                             button.devour.btn.waves-effect.waves-light(id= burger.id) devour
-
                 #right.col.s6
                     if eaten != null
                         h2#eaten Eaten Burgers

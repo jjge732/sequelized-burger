@@ -11,7 +11,8 @@ module.exports = (app, db) => {
 
     app.put('/api/burgers/', (req, res) => {
         db.burger.update({
-            devoured: true 
+            devoured: true,
+            // eater: req.body.eater
         }, {
             where: {
                 id: req.body.burgerId
