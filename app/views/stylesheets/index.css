@@ -16,7 +16,7 @@ button {
 }
 
 #left h2 ul, #right h2 ul {
-    max-height: 300px;
+    max-height: 280px;
     overflow-y: scroll;
 }
 
