@@ -18,18 +18,23 @@ html(lang="en")
             .row
                 #left.col.s6
                     if uneaten !=null
-                        ul
-                            each burger in uneaten
-                                li.devour(id= burger.id)= burger.name
+                        h2 Uneaten Burgers
+                            ul
+                                each burger in uneaten
+                                    li.teal-text
+                                        div(id= 'burger' + burger.id)= burger.name
+                                            button.devour.btn.waves-effect.waves-light(id= burger.id) devour
 
                 #right.col.s6
                     if eaten != null
-                        ul
-                            each burger in eaten
-                                li.devour(id= burger.id)= burger.name
+                        h2#eaten Eaten Burgers
+                            ul
+                                each burger in eaten
+                                    li.teal-text(id= burger.id)= burger.name
                 #burgerEntry.col.s12
-                    form
-                        input#newBurger
-                        button.waves-effect.waves-light.btn#add Add Burger
+                    h2 Make a Burger!
+                        form
+                            input#newBurger
+                            button.waves-effect.waves-light.btn#add Add Burger
     script
         include ../javascript/index.js

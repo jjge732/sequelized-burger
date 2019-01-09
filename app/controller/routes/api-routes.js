@@ -29,7 +29,6 @@ module.exports = (app, db) => {
         let eatenCount = 0, uneatenCount = 0;
         for (let i = 0; i < burgers.length; i++) {
             if (burgers[i].devoured) {
-                console.log(eatenCount);
                 app.locals.eaten[eatenCount] = {}
                 app.locals.eaten[eatenCount].name = burgers[i].dataValues.burgerName;
                 app.locals.eaten[eatenCount].id = burgers[i].dataValues.id;
@@ -44,22 +43,4 @@ module.exports = (app, db) => {
     }).catch(err => {
         console.log(err);
     })
-
-
-    // app.get('/api/burgers/', (req, res) => {
-    //     db.burger.findAll().then(burgers => {
-    //         app.locals.uneaten = [];
-    //         app.locals.eaten = [];
-    //         for (let i = 0; i < burgers.length; i++) {
-    //             if (burgers[i].devoured) {
-    //                 app.locals.eaten.push(burgers[i]);   
-    //             } else {
-    //                 app.locals.uneaten.push(burgers[i]);
-    //             }
-    //         }
-    //         res.json(burgers);
-    //     }).catch(err => {
-    //         console.log(err);
-    //     })
-    // })
 }

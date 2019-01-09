@@ -8,7 +8,8 @@ $(document).on('click', '.devour', function(event) {
             burgerId: burgerId
         }
     }).then(() => {
-        location.reload();
+        $('#eaten ul').append($('<li>').append($('#burger' + burgerId).attr('class', 'teal-text')));
+        $(this).remove();
     }).catch(err => {
         console.log(err);
     })
